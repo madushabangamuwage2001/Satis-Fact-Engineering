@@ -63,7 +63,7 @@ const ContactModal = ({ isOpen, onClose }) => {
       <div className="relative bg-white rounded-lg shadow-xl max-w-md w-full animate-scale-in">
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-200">
-          <h3 className="text-xl font-heading font-semibold text-construction-red">Get In Touch</h3>
+          <h3 className="text-center  text-xl font-heading font-semibold text-construction-red">Get In Touch</h3>
           <button
             onClick={onClose}
             className="text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-construction-red rounded-full p-1"
