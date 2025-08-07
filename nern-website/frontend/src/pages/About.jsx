@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
+import bossImage from "../assets/boss.jpg"
 
 const About = () => {
   const values = [
@@ -29,21 +30,10 @@ const About = () => {
     {
       name: "W.A. Abeynayake",
       position: "Founder & Managing Director",
-      image: "/placeholder.svg?height=300&width=300",
+      image: bossImage,
       description: "With over 15 years of experience in construction and engineering, leading our team to excellence.",
     },
-    {
-      name: "Senior Project Manager",
-      position: "Construction Supervisor",
-      image: "/placeholder.svg?height=300&width=300",
-      description: "Experienced professional overseeing project execution and quality control.",
-    },
-    {
-      name: "Lead Engineer",
-      position: "Technical Specialist",
-      image: "/placeholder.svg?height=300&width=300",
-      description: "Expert in structural engineering and technical project planning.",
-    },
+    
   ]
 
   // Animation variants for sections
@@ -292,34 +282,80 @@ const About = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-construction-red mb-4">Meet Our Team</h2>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-construction-red mb-4">Meet Our </h2>
             <p className="text-lg text-construction-gray max-w-2xl mx-auto">
               Our experienced professionals bring expertise, dedication, and passion to every project we undertake.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <AnimatePresence>
-              {team.map((member, index) => (
-                <motion.div
-                  key={index}
-                  variants={cardVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  whileHover="hover"
-                  custom={index}
-                  viewport={{ once: true }}
-                  className="bg-white rounded-lg shadow-lg overflow-hidden"
-                >
-                  <img src={member.image || "/placeholder.svg"} alt={member.name} className="w-full h-64 object-cover" />
-                  <div className="p-6">
-                    <h3 className="text-xl font-heading font-semibold mb-2 text-construction-red">{member.name}</h3>
-                    <p className="text-construction-yellow font-semibold mb-3">{member.position}</p>
-                    <p className="text-construction-gray">{member.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
+          <div className="flex justify-center">
+            <div className="w-full max-w-md">
+              <AnimatePresence>
+                {team.map((member, index) => (
+                  <motion.div
+                    key={index}
+                    variants={cardVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    whileHover="hover"
+                    custom={index}
+                    viewport={{ once: true }}
+                    className="bg-white rounded-lg shadow-lg overflow-hidden relative ring-4 ring-construction-red ring-opacity-30"
+                  >
+                    {/* Special founder badge for W.A. Abeynayake */}
+                    <motion.div
+                      className="absolute top-4 right-4 z-10 bg-construction-red text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.5, duration: 0.4 }}
+                    >
+                      Founder
+                    </motion.div>
+                    
+                    <div className="relative h-80 overflow-hidden">
+                      <motion.img 
+                        src={member.image || "/placeholder.svg"} 
+                        alt={member.name} 
+                        className="w-full h-full object-cover object-top transition-all duration-500 hover:scale-110"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.4 }}
+                      />
+                      
+                      {/* Special gradient overlay for founder */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-construction-red/20 via-transparent to-transparent"></div>
+                    </div>
+                    
+                    <div className="p-6 bg-gradient-to-br from-white to-construction-lightGray text-center">
+                      <motion.h3 
+                        className="text-2xl font-heading font-semibold mb-2 text-construction-red"
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        {member.name}
+                      </motion.h3>
+                      <p className="text-construction-red bg-construction-yellow px-3 py-1 rounded-md inline-block font-semibold mb-3">
+                        {member.position}
+                      </p>
+                      <p className="text-construction-gray leading-relaxed">{member.description}</p>
+                      
+                      {/* Special decorative element for founder */}
+                      {/* <motion.div
+                        className="mt-4 flex items-center justify-center"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.8, duration: 0.4 }}
+                      >
+                        <div className="flex space-x-1">
+                          <div className="w-2 h-2 bg-construction-red rounded-full"></div>
+                          <div className="w-2 h-2 bg-construction-yellow rounded-full"></div>
+                          <div className="w-2 h-2 bg-construction-red rounded-full"></div>
+                        </div>
+                      </motion.div> */}
+                    </div>
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </div>
           </div>
         </div>
       </motion.section>
