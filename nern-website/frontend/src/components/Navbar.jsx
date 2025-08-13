@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-
+import logoImage from "../assets/logo.png"; // Import logo directly for better asset handling
+import smartimage from "../assets/smart.png"; // Import smart image directly for better asset handling
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,10 +29,10 @@ const Navbar = () => {
       className={`fixed w-full z-50 transition-all duration-700 ease-in-out ${
         isScrolled
           ? "backdrop-blur-xl shadow-2xl border-b border-gray-100/20 bg-white/90"
-          : "bg-transparent"
+          : "bg-black/20 backdrop-blur-sm" // Add subtle dark background with blur for better readability
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo Section */}
           <Link to="/" className="flex items-center space-x-4 group">
@@ -40,9 +41,9 @@ const Navbar = () => {
               <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-yellow-400/20 via-red-400/30 to-red-700/40 blur-lg opacity-0 group-hover:opacity-80 transition-all duration-700"></div>
 
               <img
-                src="/src/assets/logo.png"
+                src={logoImage}
                 alt="Satis-Fact Engineering Logo"
-                className="relative h-20 w-auto z-10 rounded-xl transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-1 group-hover:shadow-2xl shadow-red-500/40"
+                className="relative h-20 sm:h-24 w-auto z-10 rounded-xl transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-1 group-hover:shadow-2xl shadow-red-500/40"
               />
 
               {/* Overlay gradient */}
@@ -53,10 +54,11 @@ const Navbar = () => {
                 className={`text-3xl font-extrabold tracking-tight transition-all duration-500 transform group-hover:scale-105 ${
                   isScrolled
                     ? "text-black-800"
-                    : "text-black "
+                    : "text-[#28282B] drop-shadow-md font-bold [text-stroke:2px_black]" // Better contrast on transparent background
                 }`}
-              >
-                Satis-Fact Engineering
+              > 
+                Satis-fact Construction & Maintenance <br/>
+                             Services (pvt) Ltd.
               </h1>
               <p
                 className={`text-base italic font-semibold tracking-widest transition-all duration-500 ease-in-out ${
@@ -65,13 +67,17 @@ const Navbar = () => {
                     : "text-white/80 drop-shadow-xl"
                 }`}
               >
-                Smart is Art
+                 <img
+                src={smartimage}
+                alt="Satis-Fact Engineering Logo"
+                className="absolute top-[-30px] left-[280px] h-10 w-20 z-10 rounded-xl transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-1 group-hover:shadow-2xl shadow-red-500/40"
+              />
               </p>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-14">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -83,7 +89,7 @@ const Navbar = () => {
                       : "text-red-400 drop-shadow-md"
                     : isScrolled
                       ? "text-gray-700 hover:text-red-700"
-                      : "text-black hover:text-red-400 drop-shadow-md"
+                      : "text-white hover:text-red-400 drop-shadow-md" // Better contrast on transparent background
                 }`}
               >
                 <span className="relative z-10">{link.label}</span>
@@ -113,7 +119,7 @@ const Navbar = () => {
             className={`md:hidden p-3 rounded-xl transition-all duration-500 focus:outline-none focus:ring-4 focus:ring-red-700/30 transform hover:scale-110 ${
               isScrolled
                 ? "hover:bg-red-50 shadow-lg"
-                : "hover:bg-white/20 backdrop-blur-sm"
+                : "bg-white/10 hover:bg-white/20 backdrop-blur-sm" // Add subtle background for better visibility
             }`}
             aria-label="Toggle menu"
           >
@@ -140,7 +146,7 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden bg-white/98 backdrop-blur-2xl border-t border-gray-200/50 shadow-2xl animate-slide-down">
-            <div className="py-8 px-4 space-y-4">
+            <div className="py-6 px-3 space-y-3"> {/* Adjust spacing for mobile */}
               {navLinks.map((link) => (
                 <Link
                   key={link.path}

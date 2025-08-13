@@ -81,20 +81,20 @@ const Home = () => {
           />
         </video>
 
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div className="absolute inset-0 bg-red bg-opacity-50"></div>
 
         <motion.div
-          className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto"
+          className="relative z-10 text-center text-red px-4 max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
         >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 leading-tight text-construction-red">
             Building Dreams
             <br />
             <span className="text-construction-yellow">Raising Standards</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 font-body max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl mb-8  font-bold font-body max-w-2xl mx-auto text-[#oooo]">
             Professional construction, maintenance, and engineering services with uncompromising quality and customer
             satisfaction.
           </p>

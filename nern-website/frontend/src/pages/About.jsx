@@ -31,7 +31,7 @@ const About = () => {
       name: "W.A. Abeynayake",
       position: "Founder & Managing Director",
       image: bossImage,
-      description: "With over 15 years of experience in construction and engineering, leading our team to excellence.",
+      description: "Experienced Civil Engineer (NVQ Level 05) with over 16 years of expertise in construction, consultation, and project management. Skilled in overseeing diverse civil engineering projects from planning to completion, ensuring quality, safety, and efficiency while delivering client-focused solutions.",
     },
     
   ]
