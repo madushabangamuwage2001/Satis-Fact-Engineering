@@ -157,7 +157,7 @@ const Contact = () => {
                   {
                     icon: "fas fa-map-marker-alt",
                     title: "Office Address",
-                    description: "Galle, Sri Lanka",
+                    description: "Piliyandala/Matara, Sri Lanka",
                   },
                   {
                     icon: "fas fa-phone",
@@ -389,7 +389,7 @@ const Contact = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl font-heading font-bold text-construction-red mb-4">Find Us</h2>
-            <p className="text-lg text-construction-gray">Located in Galle, Sri Lanka</p>
+            <p className="text-lg text-construction-gray">Located in Pliyandala/Matara, Sri Lanka</p>
           </motion.div>
 
           <motion.div

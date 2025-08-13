@@ -115,7 +115,7 @@ const Footer = () => {
                 { icon: "fas fa-phone", text: "+94 763 115 305" },
                 { icon: "fas fa-phone", text: "+94 712 912 196" },
                 { icon: "fas fa-envelope", text: "asankaabeynayake@gmail.com", isEmail: true },
-                { icon: "fas fa-map-marker-alt", text: "Galle, Sri Lanka" },
+                { icon: "fas fa-map-marker-alt", text: "Piliyandala/Matara, Sri Lanka" },
               ].map(({ icon, text, isEmail }, index) => (
                 <p key={index} className="flex items-center group">
                   <i className={`${icon} mr-2 text-yellow-400 group-hover:transform group-hover:rotate-12 transition-transform`}></i>

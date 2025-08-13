@@ -54,7 +54,7 @@ const Navbar = () => {
                 className={`text-3xl font-extrabold tracking-tight transition-all duration-500 transform group-hover:scale-105 ${
                   isScrolled
                     ? "text-black-800"
-                    : "text-[#28282B] drop-shadow-md font-bold [text-stroke:2px_black]" // Better contrast on transparent background
+                    : "text-[#F0F0F0] drop-shadow-md font-bold [text-stroke:2px_black]" // Better contrast on transparent background
                 }`}
               > 
                 Satis-fact Construction & Maintenance <br/>
