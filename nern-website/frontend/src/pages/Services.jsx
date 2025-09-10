@@ -109,8 +109,8 @@ const Services = () => {
   const ongoingProjects = [
     {
       id: 1,
-      title: "Modern Residential Villa Complex",
-      location: "Colombo 07, Sri Lanka",
+      title: "Rukshan- Yoga Studio",
+      location: "Mirissa",
       progress: 85,
       images: [
         "/src/assets/p11.jpg",
@@ -122,15 +122,15 @@ const Services = () => {
         "/src/assets/p17.jpg",
         "/src/assets/p18.jpg",
       ],
-      description: "Luxury three-story residential villa featuring contemporary architecture, premium finishes, and smart home integration. The project includes landscaped gardens and sustainable energy solutions.",
+      description: "A modern wellness space with calming design, natural finishes, smart lighting, and sustainable features set in tranquil landscaped surroundings.",
       startDate: "September 2023",
       expectedCompletion: "March 2024",
       services: ["Masonry & Tiling", "Electrical Work", "Plumbing", "Carpentry"],
     },
     {
       id: 2,
-      title: "Commercial Office Tower Renovation",
-      location: "Galle Road, Colombo",
+      title: "Rose Blossem villa",
+      location: "Mirissa",
       progress: 70,
       images: [
         "/src/assets/p21.jpg",
@@ -142,15 +142,15 @@ const Services = () => {
         "/src/assets/p27.jpg",
         "/src/assets/p28.jpg",
       ],
-      description: "Complete modernization of a 12-story commercial building including structural reinforcement, facade renovation, and installation of modern MEP systems for improved energy efficiency.",
+      description: "A three-story contemporary residence with refined finishes, smart home features, landscaped gardens, and sustainable energy solutions.",
       startDate: "January 2024",
       expectedCompletion: "September 2024",
       services: ["Structural Work", "Electrical Systems", "Air Conditioning", "Painting"],
     },
     {
       id: 3,
-      title: "Heritage Colonial Mansion Restoration",
-      location: "Kandy, Central Province",
+      title: "Resident  Complete Site",
+      location: "Piliyandala",
       progress: 55,
       images: [
         "/src/assets/p30.jpg",
@@ -160,7 +160,7 @@ const Services = () => {
         "/src/assets/p34.jpg",
         "/src/assets/p35.jpg",
       ],
-      description: "Meticulous restoration of a 19th-century colonial mansion preserving original architectural elements while incorporating modern amenities. Project includes roof restoration, foundation strengthening, and period-appropriate interior work.",
+      description: "A full residential development in Piliyandala featuring modern design, quality finishes, landscaped spaces, and sustainable solutions.",
       startDate: "November 2023",
       expectedCompletion: "December 2024",
       services: ["Heritage Masonry", "Roof Restoration", "Waterproofing", "Traditional Carpentry"],
@@ -516,7 +516,7 @@ const Services = () => {
                     </div>
 
                     {/* Project Details */}
-                    <div className="space-y-2 mb-4">
+                    {/* <div className="space-y-2 mb-4">
                       <div className="flex justify-between text-sm">
                         <span className="text-construction-gray">Started:</span>
                         <span className="text-construction-red font-semibold">{project.startDate}</span>
@@ -525,7 +525,7 @@ const Services = () => {
                         <span className="text-construction-gray">Expected:</span>
                         <span className="text-construction-red font-semibold">{project.expectedCompletion}</span>
                       </div>
-                    </div>
+                    </div> */}
 
                     {/* Services */}
                     {/* <div className="flex flex-wrap gap-2">

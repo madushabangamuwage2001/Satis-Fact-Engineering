@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
@@ -28,9 +28,8 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-700 ease-in-out ${
-        isScrolled
-          ? "backdrop-blur-xl shadow-2xl border-b border-red-200/30 bg-white/95"
-          : "bg-gradient-to-r  backdrop-blur-md shadow-lg border-b border-white/10"
+        
+          "backdrop-blur-xl shadow-2xl border-b border-red-200/30 bg-white/95"
       }`}
     >
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-24">
@@ -40,7 +39,7 @@ const Navbar = () => {
             <div className="relative">
               {/* Enhanced glow background for logo */}
               {/* <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-yellow-400/40 via-red-500/50 to-red-700/60 blur-xl opacity-60 group-hover:opacity-100 transition-all duration-700 scale-110"></div> */}
-              
+
               {/* Logo container with enhanced styling */}
               <div className="relative  rounded-2xl bg-gradient-to-br from-white/90 to-gray-100/90 shadow-2xl border border-white/50">
                 <img
@@ -53,19 +52,19 @@ const Navbar = () => {
               {/* Additional glow effect */}
               <div className="absolute inset-0 z-0 rounded-2xl bg-gradient-to-r from-red-500/30 to-yellow-400/30 opacity-0 group-hover:opacity-80 transition-all duration-500 blur-md"></div>
             </div>
-            
+
             <div className="hidden sm:block">
               <h1
                 className={`text-3xl font-extrabold tracking-tight transition-all duration-500 transform group-hover:scale-105 ${
-                  isScrolled
-                    ? "text-gray-800 drop-shadow-md"
-                    : "text-white drop-shadow-2xl font-bold [text-stroke:1px_rgba(0,0,0,0.3)]"
+                  
+                  
+                    "text-gray-800 drop-shadow-md"
                 }`}
-              > 
-                <span className="bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-red text-[40px]">
+              >
+                <span className="bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-red text-[28px] font-regular">
                   Satis-Fact Engineering
                 </span>
-                <br/>
+                <br />
                 {/* <span className={`text-2xl ${isScrolled ? "text-gray-700" : "text-gray-200"}`}>
                   Services (pvt) Ltd.
                 </span> */}
@@ -74,7 +73,7 @@ const Navbar = () => {
                 <img
                   src={smartimage}
                   alt="Smart Construction Badge"
-                  className="absolute top-[-21px] left-[5px] h-9 w-29 z-10 rounded-xl transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-1 drop-shadow-xl"
+                  className="absolute top-[-63px] left-[5px] h-29 w-28  rounded-xl transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-1 drop-shadow-xl"
                 />
                 {/* <p
                   className={`text-sm italic font-medium tracking-widest transition-all duration-500 ease-in-out ${
@@ -99,33 +98,33 @@ const Navbar = () => {
                   location.pathname === link.path
                     ? isScrolled
                       ? "text-red-700"
-                      : "text-yellow-400 drop-shadow-lg"
+                      : "text-red-700"
                     : isScrolled
-                      ? "text-gray-700 hover:text-red-700"
-                      : "text-white hover:text-yellow-300 drop-shadow-md"
+                    ? "text-gray-700 hover:text-red-700"
+                    : "text-gray-700 hover:text-red-700"
                 }`}
               >
                 <span className="relative z-10">{link.label}</span>
-                
+
                 {/* Background hover effect */}
                 <span
                   className={`absolute inset-0 -z-10 rounded-xl transition-all duration-500 transform scale-0 group-hover:scale-100 ${
-                    isScrolled 
-                      ? "bg-gradient-to-r from-red-50 to-red-100 shadow-lg" 
-                      : "bg-gradient-to-r from-white/10 to-white/20 backdrop-blur-sm shadow-xl"
+                    isScrolled
+                      ? "bg-gradient-to-r from-red-50 to-red-100 shadow-lg"
+                      : "bg-gradient-to-r from-red-50 to-red-100 shadow-lg"
                   } px-6 py-3 -mx-6 -my-3`}
                 ></span>
-                
+
                 {/* Active/hover underline */}
                 <span
                   className={`absolute -bottom-3 left-0 h-1.5 transition-all duration-500 rounded-full ${
                     location.pathname === link.path
                       ? isScrolled
                         ? "bg-gradient-to-r from-red-600 to-red-800 w-full shadow-lg"
-                        : "bg-gradient-to-r from-yellow-400 to-yellow-600 w-full shadow-lg"
+                        : "bg-gradient-to-r from-red-600 to-red-800 w-full shadow-lg"
                       : isScrolled
-                        ? "bg-gradient-to-r from-red-600 to-red-800 w-0 group-hover:w-full"
-                        : "bg-gradient-to-r from-yellow-400 to-yellow-600 w-0 group-hover:w-full"
+                      ? "bg-gradient-to-r from-red-600 to-red-800 w-0 group-hover:w-full"
+                      : "bg-gradient-to-r from-red-600 to-red-800 w-0 group-hover:w-full"
                   }`}
                 ></span>
               </Link>
@@ -136,27 +135,29 @@ const Navbar = () => {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className={`md:hidden p-4 rounded-2xl transition-all duration-500 focus:outline-none focus:ring-4 focus:ring-red-500/30 transform hover:scale-110 ${
-              isScrolled
-                ? "hover:bg-red-50 shadow-lg border border-red-200"
-                : "bg-gradient-to-br from-white/15 to-white/25 hover:from-white/25 hover:to-white/35 backdrop-blur-sm shadow-xl border border-white/20"
+              
+                "hover:bg-red-50 shadow-lg border border-red-200"
+                
             }`}
             aria-label="Toggle menu"
           >
             <div className="w-8 h-8 flex flex-col justify-center items-center space-y-2">
               <span
                 className={`block h-1.5 w-8 rounded-full transition-all duration-500 ease-out ${
-                  isScrolled ? "bg-red-700" : "bg-white shadow-lg"
+                   "bg-red-700" 
                 } ${isOpen ? "rotate-45 translate-y-3.5" : "-translate-y-0.5"}`}
               ></span>
               <span
                 className={`block h-1.5 w-8 rounded-full transition-all duration-500 ease-out ${
-                  isScrolled ? "bg-red-700" : "bg-white shadow-lg"
+                  "bg-red-700" 
                 } ${isOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"}`}
               ></span>
               <span
                 className={`block h-1.5 w-8 rounded-full transition-all duration-500 ease-out ${
-                  isScrolled ? "bg-red-700" : "bg-white shadow-lg"
-                } ${isOpen ? "-rotate-45 -translate-y-3.5" : "translate-y-0.5"}`}
+                   "bg-red-700"  
+                } ${
+                  isOpen ? "-rotate-45 -translate-y-3.5" : "translate-y-0.5"
+                }`}
               ></span>
             </div>
           </button>
