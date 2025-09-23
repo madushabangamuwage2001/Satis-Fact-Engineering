@@ -1,8 +1,13 @@
 {
-  "name": "my-v0-project",
-  "version": "0.1.0",
+  "name": "satis-fact-engineering",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "echo 'no build script'"
+    "build": "cd nern-website/frontend && npm install && npm run build && cp -r dist/* ../../",
+    "dev": "cd nern-website/frontend && npm run dev",
+    "start": "cd nern-website/frontend && npm run preview"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }
