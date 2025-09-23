@@ -247,6 +247,24 @@ npm test:coverage
 
 ## 🚀 Deployment
 
+### 🌟 Quick Deploy to Vercel (Recommended)
+
+This project is optimized for Vercel deployment with a single command:
+
+1. **Fork this repository** to your GitHub account
+2. **Connect to Vercel**:
+   - Go to [vercel.com](https://vercel.com)
+   - Click "New Project" 
+   - Import your forked repository
+3. **Set Environment Variables** (see `ENVIRONMENT.md` for details):
+   - `MONGO_URI` - Your MongoDB connection string
+   - `EMAIL_USER` - Gmail address for sending emails
+   - `EMAIL_PASS` - Gmail app password
+   - `OWNER_EMAIL` - Email to receive contact forms
+4. **Deploy** - Vercel will automatically build and deploy your site!
+
+📖 **Detailed Guide**: See `VERCEL_DEPLOYMENT.md` for step-by-step instructions.
+
 ### Frontend (Vercel/Netlify)
 1. Build the project: `npm run build`
 2. Deploy the `dist` folder to your hosting platform
