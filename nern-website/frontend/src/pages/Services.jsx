@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Services = () => {
-  const [flippedCard, setFlippedCard] = useState(null)
-  const [currentImageIndex, setCurrentImageIndex] = useState({})
+  const [flippedCard, setFlippedCard] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState({});
 
   const services = [
     {
@@ -61,7 +61,12 @@ const Services = () => {
       shortDesc: "Professional painting and color washing services",
       fullDesc:
         "Complete painting services including spray painting, color washing, and decorative finishes. We use premium paints and modern techniques to achieve flawless results that enhance and protect your property.",
-      features: ["Spray Painting", "Color Washing", "Interior & Exterior Painting", "Decorative Finishes"],
+      features: [
+        "Spray Painting",
+        "Color Washing",
+        "Interior & Exterior Painting",
+        "Decorative Finishes",
+      ],
     },
     {
       id: 5,
@@ -71,7 +76,12 @@ const Services = () => {
       shortDesc: "Safe and reliable electrical installations and repairs",
       fullDesc:
         "Professional electrical services covering installations, repairs, and maintenance. Our certified electricians ensure all work meets safety standards and local regulations, providing reliable power solutions for your property.",
-      features: ["Wiring & Rewiring", "Electrical Panel Installation", "Lighting Solutions", "Safety Inspections"],
+      features: [
+        "Wiring & Rewiring",
+        "Electrical Panel Installation",
+        "Lighting Solutions",
+        "Safety Inspections",
+      ],
     },
     {
       id: 6,
@@ -81,7 +91,12 @@ const Services = () => {
       shortDesc: "AC installation, maintenance, and repair services",
       fullDesc:
         "Complete air conditioning services including installation, maintenance, and repairs. We work with all major brands and provide energy-efficient cooling solutions for residential and commercial properties.",
-      features: ["AC Installation", "Maintenance & Servicing", "Repair Services", "Energy Efficiency Upgrades"],
+      features: [
+        "AC Installation",
+        "Maintenance & Servicing",
+        "Repair Services",
+        "Energy Efficiency Upgrades",
+      ],
     },
     {
       id: 7,
@@ -91,7 +106,12 @@ const Services = () => {
       shortDesc: "Comprehensive handyman services for all your needs",
       fullDesc:
         "Versatile handyman services covering a wide range of maintenance and repair tasks. From minor fixes to major improvements, our skilled professionals handle various projects with efficiency and attention to detail.",
-      features: ["General Repairs", "Maintenance Services", "Home Improvements", "Emergency Fixes"],
+      features: [
+        "General Repairs",
+        "Maintenance Services",
+        "Home Improvements",
+        "Emergency Fixes",
+      ],
     },
     {
       id: 8,
@@ -101,9 +121,14 @@ const Services = () => {
       shortDesc: "End-to-end project management and coordination",
       fullDesc:
         "Professional project management services ensuring your construction project runs smoothly from start to finish. We coordinate all aspects including scheduling, quality control, and budget management.",
-      features: ["Project Planning", "Timeline Management", "Quality Control", "Budget Oversight"],
+      features: [
+        "Project Planning",
+        "Timeline Management",
+        "Quality Control",
+        "Budget Oversight",
+      ],
     },
-  ]
+  ];
 
   // Add ongoing projects data with multiple images
   const ongoingProjects = [
@@ -122,10 +147,16 @@ const Services = () => {
         "/src/assets/p17.jpg",
         "/src/assets/p18.jpg",
       ],
-      description: "A modern wellness space with calming design, natural finishes, smart lighting, and sustainable features set in tranquil landscaped surroundings.",
+      description:
+        "A modern wellness space with calming design, natural finishes, smart lighting, and sustainable features set in tranquil landscaped surroundings.",
       startDate: "September 2023",
       expectedCompletion: "March 2024",
-      services: ["Masonry & Tiling", "Electrical Work", "Plumbing", "Carpentry"],
+      services: [
+        "Masonry & Tiling",
+        "Electrical Work",
+        "Plumbing",
+        "Carpentry",
+      ],
     },
     {
       id: 2,
@@ -142,10 +173,16 @@ const Services = () => {
         "/src/assets/p27.jpg",
         "/src/assets/p28.jpg",
       ],
-      description: "A three-story contemporary residence with refined finishes, smart home features, landscaped gardens, and sustainable energy solutions.",
+      description:
+        "A three-story contemporary residence with refined finishes, smart home features, landscaped gardens, and sustainable energy solutions.",
       startDate: "January 2024",
       expectedCompletion: "September 2024",
-      services: ["Structural Work", "Electrical Systems", "Air Conditioning", "Painting"],
+      services: [
+        "Structural Work",
+        "Electrical Systems",
+        "Air Conditioning",
+        "Painting",
+      ],
     },
     {
       id: 3,
@@ -160,39 +197,49 @@ const Services = () => {
         "/src/assets/p34.jpg",
         "/src/assets/p35.jpg",
       ],
-      description: "A full residential development in Piliyandala featuring modern design, quality finishes, landscaped spaces, and sustainable solutions.",
+      description:
+        "A full residential development in Piliyandala featuring modern design, quality finishes, landscaped spaces, and sustainable solutions.",
       startDate: "November 2023",
       expectedCompletion: "December 2024",
-      services: ["Heritage Masonry", "Roof Restoration", "Waterproofing", "Traditional Carpentry"],
+      services: [
+        "Heritage Masonry",
+        "Roof Restoration",
+        "Waterproofing",
+        "Traditional Carpentry",
+      ],
     },
-  ]
+  ];
 
   const handleCardClick = (cardId) => {
-    setFlippedCard(flippedCard === cardId ? null : cardId)
-  }
+    setFlippedCard(flippedCard === cardId ? null : cardId);
+  };
 
   const handleImageNavigation = (projectId, direction) => {
-    setCurrentImageIndex(prev => {
-      const project = ongoingProjects.find(p => p.id === projectId)
-      const currentIndex = prev[projectId] || 0
-      const maxIndex = project.images.length - 1
-      
-      let newIndex
-      if (direction === 'next') {
-        newIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1
+    setCurrentImageIndex((prev) => {
+      const project = ongoingProjects.find((p) => p.id === projectId);
+      const currentIndex = prev[projectId] || 0;
+      const maxIndex = project.images.length - 1;
+
+      let newIndex;
+      if (direction === "next") {
+        newIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
       } else {
-        newIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1
+        newIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
       }
-      
-      return { ...prev, [projectId]: newIndex }
-    })
-  }
+
+      return { ...prev, [projectId]: newIndex };
+    });
+  };
 
   // Animation variants for sections
   const sectionVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-  }
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
 
   // Animation variants for cards
   const cardVariants = {
@@ -203,13 +250,13 @@ const Services = () => {
       transition: { delay: i * 0.2, duration: 0.5, ease: "easeOut" },
     }),
     hover: { scale: 1.05, transition: { duration: 0.3 } },
-  }
+  };
 
   // Animation variants for flip effect
   const flipVariants = {
     front: { rotateY: 0, transition: { duration: 0.7, ease: "easeInOut" } },
     back: { rotateY: 180, transition: { duration: 0.7, ease: "easeInOut" } },
-  }
+  };
 
   return (
     <div className="pt-21">
@@ -243,8 +290,8 @@ const Services = () => {
             Our Services
           </h1>
           <p className="text-xl md:text-2xl font-body max-w-3xl mx-auto">
-            Comprehensive construction and maintenance services delivered with expertise, quality, and customer
-            satisfaction as our top priorities.
+            Comprehensive construction and maintenance services delivered with
+            expertise, quality, and customer satisfaction as our top priorities.
           </p>
         </motion.div>
 
@@ -273,9 +320,12 @@ const Services = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-construction-red mb-4">What We Offer</h2>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-construction-red mb-4">
+              What We Offer
+            </h2>
             <p className="text-lg text-construction-gray max-w-2xl mx-auto">
-              Click on any service card to learn more about what we offer and how we can help with your project.
+              Click on any service card to learn more about what we offer and
+              how we can help with your project.
             </p>
           </motion.div>
 
@@ -328,13 +378,16 @@ const Services = () => {
                           <h3 className="text-xl font-heading font-semibold mb-2 text-construction-red">
                             {service.title}
                           </h3>
-                          <p className="text-construction-gray mb-4">{service.shortDesc}</p>
+                          <p className="text-construction-gray mb-4">
+                            {service.shortDesc}
+                          </p>
                           <motion.div
                             className="text-construction-red font-semibold"
                             whileHover={{ x: 5 }}
                             transition={{ duration: 0.2 }}
                           >
-                            Click to learn more <i className="fas fa-arrow-right ml-1"></i>
+                            Click to learn more{" "}
+                            <i className="fas fa-arrow-right ml-1"></i>
                           </motion.div>
                         </div>
                       </div>
@@ -408,7 +461,8 @@ const Services = () => {
               Our Ongoing Projects
             </h2>
             <p className="text-lg text-construction-gray max-w-2xl mx-auto">
-              Take a look at our current projects in progress, showcasing our expertise across different construction sectors.
+              Take a look at our current projects in progress, showcasing our
+              expertise across different construction sectors.
             </p>
           </motion.div>
 
@@ -428,30 +482,35 @@ const Services = () => {
                 >
                   <div className="relative h-48 overflow-hidden group">
                     <motion.img
-                      src={project.images[currentImageIndex[project.id] || 0] || "/src/assets/story.jpeg"}
-                      alt={`${project.title} - Image ${(currentImageIndex[project.id] || 0) + 1}`}
+                      src={
+                        project.images[currentImageIndex[project.id] || 0] ||
+                        "/src/assets/story.jpeg"
+                      }
+                      alt={`${project.title} - Image ${
+                        (currentImageIndex[project.id] || 0) + 1
+                      }`}
                       className="w-full h-full object-cover"
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.3 }}
                       onError={(e) => {
-                        e.target.src = "/src/assets/story.jpeg"
+                        e.target.src = "/src/assets/story.jpeg";
                       }}
                     />
-                    
+
                     {/* Progress Badge */}
                     <div className="absolute top-4 left-4">
                       <span className="bg-construction-yellow text-construction-red px-3 py-1 rounded-full text-sm font-semibold">
                         {project.progress}% Complete
                       </span>
                     </div>
-                    
+
                     {/* Image Navigation */}
                     {project.images.length > 1 && (
                       <>
                         <button
                           onClick={(e) => {
-                            e.stopPropagation()
-                            handleImageNavigation(project.id, 'prev')
+                            e.stopPropagation();
+                            handleImageNavigation(project.id, "prev");
                           }}
                           className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-opacity-75"
                         >
@@ -459,27 +518,31 @@ const Services = () => {
                         </button>
                         <button
                           onClick={(e) => {
-                            e.stopPropagation()
-                            handleImageNavigation(project.id, 'next')
+                            e.stopPropagation();
+                            handleImageNavigation(project.id, "next");
                           }}
                           className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-opacity-75"
                         >
                           <i className="fas fa-chevron-right text-sm"></i>
                         </button>
-                        
+
                         {/* Image Indicators */}
                         <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1">
                           {project.images.map((_, imgIndex) => (
                             <button
                               key={imgIndex}
                               onClick={(e) => {
-                                e.stopPropagation()
-                                setCurrentImageIndex(prev => ({ ...prev, [project.id]: imgIndex }))
+                                e.stopPropagation();
+                                setCurrentImageIndex((prev) => ({
+                                  ...prev,
+                                  [project.id]: imgIndex,
+                                }));
                               }}
                               className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                                (currentImageIndex[project.id] || 0) === imgIndex 
-                                  ? 'bg-construction-yellow' 
-                                  : 'bg-white bg-opacity-50'
+                                (currentImageIndex[project.id] || 0) ===
+                                imgIndex
+                                  ? "bg-construction-yellow"
+                                  : "bg-white bg-opacity-50"
                               }`}
                             />
                           ))}
@@ -496,7 +559,9 @@ const Services = () => {
                       <i className="fas fa-map-marker-alt mr-2 text-construction-red"></i>
                       {project.location}
                     </p>
-                    <p className="text-construction-gray mb-4 text-sm">{project.description}</p>
+                    <p className="text-construction-gray mb-4 text-sm">
+                      {project.description}
+                    </p>
 
                     {/* Progress Bar */}
                     <div className="mb-4">
@@ -562,9 +627,12 @@ const Services = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-construction-red mb-4">Our Process</h2>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-construction-red mb-4">
+              Our Process
+            </h2>
             <p className="text-lg text-construction-gray max-w-2xl mx-auto">
-              We follow a systematic approach to ensure every project is completed to the highest standards.
+              We follow a systematic approach to ensure every project is
+              completed to the highest standards.
             </p>
           </motion.div>
 
@@ -574,25 +642,29 @@ const Services = () => {
                 {
                   step: "01",
                   title: "Consultation",
-                  description: "We discuss your needs, assess the project scope, and provide expert recommendations.",
+                  description:
+                    "We discuss your needs, assess the project scope, and provide expert recommendations.",
                   icon: "fas fa-comments",
                 },
                 {
                   step: "02",
                   title: "Planning",
-                  description: "Detailed project planning including timeline, materials, and cost estimation.",
+                  description:
+                    "Detailed project planning including timeline, materials, and cost estimation.",
                   icon: "fas fa-drafting-compass",
                 },
                 {
                   step: "03",
                   title: "Execution",
-                  description: "Professional execution with quality control and regular progress updates.",
+                  description:
+                    "Professional execution with quality control and regular progress updates.",
                   icon: "fas fa-hard-hat",
                 },
                 {
                   step: "04",
                   title: "Completion",
-                  description: "Final inspection, cleanup, and handover with warranty and support.",
+                  description:
+                    "Final inspection, cleanup, and handover with warranty and support.",
                   icon: "fas fa-check-circle",
                 },
               ].map((process, index) => (
@@ -619,8 +691,12 @@ const Services = () => {
                       {process.step}
                     </motion.div>
                   </motion.div>
-                  <h3 className="text-lg font-heading font-semibold mb-2 text-construction-red">{process.title}</h3>
-                  <p className="text-construction-gray mb-4">{process.description}</p>
+                  <h3 className="text-lg font-heading font-semibold mb-2 text-construction-red">
+                    {process.title}
+                  </h3>
+                  <p className="text-construction-gray mb-4">
+                    {process.description}
+                  </p>
                 </motion.div>
               ))}
             </AnimatePresence>
@@ -628,7 +704,7 @@ const Services = () => {
         </div>
       </motion.section>
     </div>
-  )
-}
+  );
+};
 
-export default Services
+export default Services;

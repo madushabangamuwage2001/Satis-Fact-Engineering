@@ -1,25 +1,25 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import LoadingSpinner from "../components/LoadingSpinner"
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const Contact = () => {
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState("")
-  const [success, setSuccess] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
-  })
+  });
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsLoading(true)
-    setError("")
-    setSuccess(false)
+    e.preventDefault();
+    setIsLoading(true);
+    setError("");
+    setSuccess(false);
 
     try {
       const response = await fetch("/api/feedback", {
@@ -28,38 +28,45 @@ const Contact = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
-      })
+      });
 
       if (response.ok) {
-        setSuccess(true)
-        setFormData({ name: "", email: "", phone: "", message: "" })
-        setTimeout(() => setSuccess(false), 5000) // Hide success message after 5 seconds
+        setSuccess(true);
+        setFormData({ name: "", email: "", phone: "", message: "" });
+        setTimeout(() => setSuccess(false), 5000); // Hide success message after 5 seconds
       } else {
-        const errorData = await response.json()
-        setError(errorData.message || "There was an error sending your message. Please try again.")
+        const errorData = await response.json();
+        setError(
+          errorData.message ||
+            "There was an error sending your message. Please try again."
+        );
       }
     } catch (error) {
-      console.error("Error:", error)
-      setError("Network error. Please check your connection and try again.")
+      console.error("Error:", error);
+      setError("Network error. Please check your connection and try again.");
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-    })
+    });
     // Clear error when user starts typing
-    if (error) setError("")
-  }
+    if (error) setError("");
+  };
 
   // Animation variants for sections
   const sectionVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-  }
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
 
   // Animation variants for contact items
   const itemVariants = {
@@ -69,7 +76,7 @@ const Contact = () => {
       x: 0,
       transition: { delay: i * 0.2, duration: 0.5, ease: "easeOut" },
     }),
-  }
+  };
 
   // Animation variants for form inputs
   const inputVariants = {
@@ -79,14 +86,18 @@ const Contact = () => {
       y: 0,
       transition: { delay: i * 0.1, duration: 0.4 },
     }),
-    focus: { scale: 1.02, borderColor: "#ff4d4f", transition: { duration: 0.3 } },
-  }
+    focus: {
+      scale: 1.02,
+      borderColor: "#ff4d4f",
+      transition: { duration: 0.3 },
+    },
+  };
 
   // Animation variants for buttons
   const buttonVariants = {
     hover: { scale: 1.05, transition: { duration: 0.3 } },
     tap: { scale: 0.95 },
-  }
+  };
 
   return (
     <div className="pt-21">
@@ -120,7 +131,8 @@ const Contact = () => {
             Contact Us
           </h1>
           <p className="text-xl md:text-2xl font-body max-w-3xl mx-auto">
-            Ready to start your construction project? Get in touch with us for a free consultation and estimate.
+            Ready to start your construction project? Get in touch with us for a
+            free consultation and estimate.
           </p>
         </motion.div>
 
@@ -150,7 +162,9 @@ const Contact = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-heading font-bold text-construction-red mb-8">Get In Touch</h2>
+              <h2 className="text-3xl font-heading font-bold text-construction-red mb-8">
+                Get In Touch
+              </h2>
 
               <div className="space-y-6 mb-8">
                 {[
@@ -172,7 +186,10 @@ const Contact = () => {
                   {
                     icon: "fas fa-clock",
                     title: "Business Hours",
-                    description: ["Monday - Saturday: 8:00 AM - 6:00 PM", "Sunday: Emergency services only"],
+                    description: [
+                      "Monday - Saturday: 8:00 AM - 6:00 PM",
+                      "Sunday: Emergency services only",
+                    ],
                   },
                 ].map((item, index) => (
                   <motion.div
@@ -192,13 +209,19 @@ const Contact = () => {
                       <i className={`${item.icon} text-lg`}></i>
                     </motion.div>
                     <div>
-                      <h3 className="text-lg font-semibold text-construction-red mb-1">{item.title}</h3>
+                      <h3 className="text-lg font-semibold text-construction-red mb-1">
+                        {item.title}
+                      </h3>
                       {Array.isArray(item.description) ? (
                         item.description.map((desc, i) => (
-                          <p key={i} className="text-construction-gray">{desc}</p>
+                          <p key={i} className="text-construction-gray">
+                            {desc}
+                          </p>
                         ))
                       ) : (
-                        <p className="text-construction-gray">{item.description}</p>
+                        <p className="text-construction-gray">
+                          {item.description}
+                        </p>
                       )}
                     </div>
                   </motion.div>
@@ -207,7 +230,9 @@ const Contact = () => {
 
               {/* Quick Contact Options */}
               <div className="space-y-4">
-                <h3 className="text-xl font-heading font-semibold text-construction-red mb-4">Quick Contact</h3>
+                <h3 className="text-xl font-heading font-semibold text-construction-red mb-4">
+                  Quick Contact
+                </h3>
 
                 <motion.a
                   href="https://wa.me/94763115305"
@@ -227,7 +252,9 @@ const Contact = () => {
                   </motion.div>
                   <div>
                     <h4 className="font-semibold text-gray-800">WhatsApp</h4>
-                    <p className="text-sm text-gray-600">Chat with us instantly</p>
+                    <p className="text-sm text-gray-600">
+                      Chat with us instantly
+                    </p>
                   </div>
                 </motion.a>
 
@@ -261,7 +288,9 @@ const Contact = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-2xl font-heading font-bold text-construction-red mb-6">Send Us a Message</h2>
+              <h2 className="text-2xl font-heading font-bold text-construction-red mb-6">
+                Send Us a Message
+              </h2>
 
               <AnimatePresence>
                 {success && (
@@ -295,9 +324,24 @@ const Contact = () => {
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 {[
-                  { label: "Full Name *", id: "name", type: "text", placeholder: "Enter your full name" },
-                  { label: "Email Address *", id: "email", type: "email", placeholder: "Enter your email address" },
-                  { label: "Phone Number", id: "phone", type: "tel", placeholder: "Enter your phone number" },
+                  {
+                    label: "Full Name *",
+                    id: "name",
+                    type: "text",
+                    placeholder: "Enter your full name",
+                  },
+                  {
+                    label: "Email Address *",
+                    id: "email",
+                    type: "email",
+                    placeholder: "Enter your email address",
+                  },
+                  {
+                    label: "Phone Number",
+                    id: "phone",
+                    type: "tel",
+                    placeholder: "Enter your phone number",
+                  },
                 ].map((field, index) => (
                   <motion.div
                     key={field.id}
@@ -307,7 +351,10 @@ const Contact = () => {
                     custom={index}
                     viewport={{ once: true }}
                   >
-                    <label htmlFor={field.id} className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor={field.id}
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       {field.label}
                     </label>
                     <motion.input
@@ -332,7 +379,10 @@ const Contact = () => {
                   custom={3}
                   viewport={{ once: true }}
                 >
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Project Details *
                   </label>
                   <motion.textarea
@@ -388,8 +438,12 @@ const Contact = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-heading font-bold text-construction-red mb-4">Find Us</h2>
-            <p className="text-lg text-construction-gray">Located in Pliyandala/Matara, Sri Lanka</p>
+            <h2 className="text-3xl font-heading font-bold text-construction-red mb-4">
+              Find Us
+            </h2>
+            <p className="text-lg text-construction-gray">
+              Located in Pliyandala/Matara, Sri Lanka
+            </p>
           </motion.div>
 
           <motion.div
@@ -413,7 +467,7 @@ const Contact = () => {
         </div>
       </motion.section>
     </div>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

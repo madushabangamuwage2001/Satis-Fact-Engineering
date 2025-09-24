@@ -61,8 +61,8 @@ const Navbar = () => {
                     "text-gray-800 drop-shadow-md"
                 }`}
               >
-                <span className="bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-red text-[28px] font-regular">
-                  Satis-Fact Engineering
+                <span className="bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-red text-[35px] font-regular">
+                  Satis-Fact Construction
                 </span>
                 <br />
                 {/* <span className={`text-2xl ${isScrolled ? "text-gray-700" : "text-gray-200"}`}>
@@ -73,7 +73,7 @@ const Navbar = () => {
                 <img
                   src={smartimage}
                   alt="Smart Construction Badge"
-                  className="absolute top-[-63px] left-[5px] h-29 w-28  rounded-xl transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-1 drop-shadow-xl"
+                  className="absolute top-[-16px] left-[5px] h-9 w-auto z-10 rounded-xl transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-1 drop-shadow-xl"
                 />
                 {/* <p
                   className={`text-sm italic font-medium tracking-widest transition-all duration-500 ease-in-out ${
