@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "framework": "vite",
+  "buildCommand": "cd nern-website/frontend && npm install && npm run build",
+  "outputDirectory": "nern-website/frontend/dist",
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    }
+  ],
+  "builds": [
+    {
+      "src": "nern-website/frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    },
+    {
+      "src": "nern-website/backend/server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "nern-website/backend/server.js"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "nern-website/frontend/dist/index.html"
+    }
+  ]
+}

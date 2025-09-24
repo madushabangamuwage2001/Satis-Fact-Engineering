@@ -1,52 +1,61 @@
-import { Link } from "react-router-dom"
-import { motion, AnimatePresence } from "framer-motion"
-import bossImage from "../assets/boss.png"
-import person2 from "../assets/person2.png"
+import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import bossImage from "../assets/boss.png";
+import person2 from "../assets/person2.png";
 const About = () => {
   const values = [
     {
       icon: "fas fa-bullseye",
       title: "Quality First",
-      description: "We never compromise on quality, using only the best materials and proven construction techniques.",
+      description:
+        "We never compromise on quality, using only the best materials and proven construction techniques.",
     },
     {
       icon: "fas fa-users",
       title: "Customer Focus",
-      description: "Your satisfaction is our success. We listen, understand, and deliver exactly what you need.",
+      description:
+        "Your satisfaction is our success. We listen, understand, and deliver exactly what you need.",
     },
     {
       icon: "fas fa-shield-alt",
       title: "Reliability",
-      description: "Count on us for consistent, dependable service and timely project completion.",
+      description:
+        "Count on us for consistent, dependable service and timely project completion.",
     },
     {
       icon: "fas fa-lightbulb",
       title: "Innovation",
-      description: "We embrace new technologies and methods to provide efficient, modern solutions.",
+      description:
+        "We embrace new technologies and methods to provide efficient, modern solutions.",
     },
-  ]
+  ];
 
   const team = [
     {
       name: "W.A. Abeynayake",
       position: "Founder & Managing Director",
       image: bossImage,
-      description: "Experienced Civil Engineer (NVQ Level 05) with over 16 years of expertise in construction, consultation, and project management. Skilled in overseeing diverse civil engineering projects from planning to completion, ensuring quality, safety, and efficiency while delivering client-focused solutions.",
+      description:
+        "Experienced Civil Engineer (NVQ Level 05) with over 16 years of expertise in construction, consultation, and project management. Skilled in overseeing diverse civil engineering projects from planning to completion, ensuring quality, safety, and efficiency while delivering client-focused solutions.",
     },
-     {
+    {
       name: "Chamila Samarawickrama",
       position: "Quantity Survey",
       image: person2,
-      description: "government-recognized, ICTAD-registered company specializing in Civil Engineering. With NVQ Level 05 qualifications and over 16 years of proven field experience, we excel in consultation, project management, and quantity surveying. As an IQSSL member, we ensure professionalism, quality, and reliability in every project we undertake..",
+      description:
+        "government-recognized, ICTAD-registered company specializing in Civil Engineering. With NVQ Level 05 qualifications and over 16 years of proven field experience, we excel in consultation, project management, and quantity surveying. As an IQSSL member, we ensure professionalism, quality, and reliability in every project we undertake..",
     },
-  ]
-  
+  ];
 
   // Animation variants for sections
   const sectionVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-  }
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
 
   // Animation variants for cards
   const cardVariants = {
@@ -57,7 +66,7 @@ const About = () => {
       transition: { delay: i * 0.2, duration: 0.5, ease: "easeOut" },
     }),
     hover: { scale: 1.05, transition: { duration: 0.3 } },
-  }
+  };
 
   return (
     <div className="pt-21">
@@ -91,8 +100,9 @@ const About = () => {
             About Satis-Fact Engineering
           </h1>
           <p className="text-xl md:text-2xl font-body max-w-3xl mx-auto">
-            Building dreams and raising standards since our inception. We are a trusted construction and engineering
-            company committed to delivering exceptional quality and customer satisfaction.
+            Building dreams and raising standards since our inception. We are a
+            trusted construction and engineering company committed to delivering
+            exceptional quality and customer satisfaction.
           </p>
         </motion.div>
 
@@ -121,20 +131,27 @@ const About = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-construction-red mb-6">Our Story</h2>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-construction-red mb-6">
+                Our Story
+              </h2>
               <p className="text-lg text-construction-gray mb-6">
-                Satis-Fact Engineering was founded with a simple yet powerful vision: to provide comprehensive
-                construction and maintenance services that exceed customer expectations. What started as a small local
-                business has grown into a trusted name in the Sri Lankan construction industry.
+                Satis-Fact Engineering was founded with a simple yet powerful
+                vision: to provide comprehensive construction and maintenance
+                services that exceed customer expectations. What started as a
+                small local business has grown into a trusted name in the Sri
+                Lankan construction industry.
               </p>
               <p className="text-lg text-construction-gray mb-6">
-                Our journey has been marked by continuous learning, adaptation, and an unwavering commitment to quality.
-                We've successfully completed hundreds of projects, from residential homes to commercial complexes, each
-                one reinforcing our reputation for excellence.
+                Our journey has been marked by continuous learning, adaptation,
+                and an unwavering commitment to quality. We've successfully
+                completed hundreds of projects, from residential homes to
+                commercial complexes, each one reinforcing our reputation for
+                excellence.
               </p>
               <p className="text-lg text-construction-gray">
-                Today, we stand as an ICTAD-certified company, equipped with modern tools, skilled professionals, and
-                the experience to handle projects of any scale and complexity.
+                Today, we stand as an ICTAD-certified company, equipped with
+                modern tools, skilled professionals, and the experience to
+                handle projects of any scale and complexity.
               </p>
             </motion.div>
             <motion.div
@@ -190,11 +207,14 @@ const About = () => {
               >
                 <i className="fas fa-bullseye text-2xl"></i>
               </motion.div>
-              <h3 className="text-2xl font-heading font-bold mb-4">Our Mission</h3>
+              <h3 className="text-2xl font-heading font-bold mb-4">
+                Our Mission
+              </h3>
               <p className="text-lg text-gray-200">
-                To deliver exceptional construction and maintenance services that transform spaces and exceed
-                expectations, while building lasting relationships with our clients through trust, quality, and
-                reliability.
+                To deliver exceptional construction and maintenance services
+                that transform spaces and exceed expectations, while building
+                lasting relationships with our clients through trust, quality,
+                and reliability.
               </p>
             </motion.div>
             <motion.div
@@ -211,10 +231,13 @@ const About = () => {
               >
                 <i className="fas fa-eye text-2xl"></i>
               </motion.div>
-              <h3 className="text-2xl font-heading font-bold mb-4">Our Vision</h3>
+              <h3 className="text-2xl font-heading font-bold mb-4">
+                Our Vision
+              </h3>
               <p className="text-lg text-gray-200">
-                To be the leading construction and engineering company in Sri Lanka, recognized for innovation,
-                sustainability, and unwavering commitment to customer satisfaction and community development.
+                To be the leading construction and engineering company in Sri
+                Lanka, recognized for innovation, sustainability, and unwavering
+                commitment to customer satisfaction and community development.
               </p>
             </motion.div>
           </div>
@@ -237,9 +260,12 @@ const About = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-construction-red mb-4">Our Core Values</h2>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-construction-red mb-4">
+              Our Core Values
+            </h2>
             <p className="text-lg text-construction-gray max-w-2xl mx-auto">
-              These fundamental principles guide every decision we make and every project we undertake.
+              These fundamental principles guide every decision we make and
+              every project we undertake.
             </p>
           </motion.div>
 
@@ -263,7 +289,9 @@ const About = () => {
                   >
                     <i className={`${value.icon} text-3xl`}></i>
                   </motion.div>
-                  <h3 className="text-xl font-heading font-semibold mb-3 text-construction-red">{value.title}</h3>
+                  <h3 className="text-xl font-heading font-semibold mb-3 text-construction-red">
+                    {value.title}
+                  </h3>
                   <p className="text-construction-gray">{value.description}</p>
                 </motion.div>
               ))}
@@ -288,9 +316,12 @@ const About = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-construction-red mb-4">Meet Our Team</h2>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-construction-red mb-4">
+              Meet Our Team
+            </h2>
             <p className="text-lg text-construction-gray max-w-2xl mx-auto">
-              Our experienced professionals bring expertise, dedication, and passion to every project we undertake.
+              Our experienced professionals bring expertise, dedication, and
+              passion to every project we undertake.
             </p>
           </motion.div>
 
@@ -313,25 +344,23 @@ const About = () => {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.5, duration: 0.4 }}
-                  >
-                   
-                  </motion.div>
-                  
+                  ></motion.div>
+
                   <div className="relative h-80 overflow-hidden">
-                    <motion.img 
-                      src={member.image || "/placeholder.svg"} 
-                      alt={member.name} 
+                    <motion.img
+                      src={member.image || "/placeholder.svg"}
+                      alt={member.name}
                       className="w-full h-full object-cover object-top transition-all duration-500 hover:scale-110"
                       whileHover={{ scale: 1.1 }}
                       transition={{ duration: 0.4 }}
                     />
-                    
+
                     {/* Special gradient overlay for founder */}
                     <div className="absolute inset-0 bg-gradient-to-t from-construction-red/20 via-transparent to-transparent"></div>
                   </div>
-                  
+
                   <div className="p-8 bg-gradient-to-br from-white to-construction-lightGray text-center">
-                    <motion.h3 
+                    <motion.h3
                       className="text-2xl font-heading font-semibold mb-2 text-construction-red"
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.2 }}
@@ -341,7 +370,9 @@ const About = () => {
                     <p className="text-construction-red bg-construction-yellow px-3 py-1 rounded-md inline-block font-semibold mb-3">
                       {member.position}
                     </p>
-                    <p className="text-construction-gray leading-relaxed">{member.description}</p>
+                    <p className="text-construction-gray leading-relaxed">
+                      {member.description}
+                    </p>
                   </div>
                 </motion.div>
               ))}
@@ -350,7 +381,7 @@ const About = () => {
         </div>
       </motion.section>
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;
